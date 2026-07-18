@@ -1,5 +1,5 @@
 import react from 'react'
-import User from './components/User'
+import List from './components/List'
 
 
 
@@ -7,7 +7,7 @@ let App = () => {
   return (
     <>
       <div className="cards">
-        <User />
+        <List />
       </div>
     </>
   )
