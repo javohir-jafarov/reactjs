@@ -8,6 +8,6 @@ const User = () => {
   return (
     <div className='underline'>{isUserLogged && `Salom ${userName}`}</div>
   )
-}
+} 
 
 export default User
