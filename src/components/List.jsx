@@ -10,14 +10,17 @@ let fruits = [{id: 1,name: 'apple', cal: 95},
 // fruits.sort((a, b) => a.name.localeCompare(b.name)) // alphabetical
 // fruits.sort((a, b) => b.name.localeCompare(a.name)) // reverse alphabetical
 // fruits.sort((a, b) => a.cal - b.cal) // Numeric
-fruits.sort((a, b) => b.cal - a.cal) // reverse Numeric
+// fruits.sort((a, b) => b.cal - a.cal) // reverse Numeric
 
 
+//const lowCalFruits = fruits.filter(fruit => fruit.cal <= 150) // 150 dan kamini filtirlebdi
 
-const ListedFruits = fruits.map(fruit => 
+// const highCalFruits = fruits.filter(highCalFruit => highCalFruit.cal >= 100) // 100 dan kupini filterledi
 
-<li key={fruit.id}>
-  {fruit.name}:&nbsp;<b>{fruit.cal}</b>
+const ListedFruits = highCalFruits.map(highCalFruit => 
+
+<li key={highCalFruit.id}>
+  {highCalFruit.name}:&nbsp;<b>{highCalFruit.cal}</b>
 </li>)
 
 
