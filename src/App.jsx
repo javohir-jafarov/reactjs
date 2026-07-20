@@ -16,8 +16,7 @@ let vegie = [{id: 6,name: 'carrot', cal: 55},
 let App = () => {
   return (
     <>  
-        <List item={fruits} category='fruits'/>
-        <List item={vegie} category='vegie'/>
+      <List data={fruits} />
     </>
   )
 }
