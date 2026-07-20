@@ -14,8 +14,10 @@ const List = (props) => {
 
 // data.sort((a, b) => b.cal - a.cal)
 
+const lowCalFruit = data.filter(fruit => fruit.cal <= 100)
 
-  let itemList = data.map(item => <li key={item.id}>{item.name}: {item.cal}</li>);
+
+  let itemList = lowCalFruit.map(lowCalFruit => <li key={lowCalFruit.id}>{lowCalFruit.name}: {lowCalFruit.cal}</li>);
   
 
 
