@@ -1,11 +1,14 @@
 import React from 'react'
-import Button from './components/Button'
-
+import MyComponent from './components/MyComponent.jsx'
 const App = () => {
+
+  
+
+
   return (
-    <div>
-      <Button />
-    </div>
+    <>
+      <MyComponent/>
+    </>
   )
 }
 
