@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 
 const buttons = [
     {id: 1, textContent: '-'},
@@ -9,7 +10,7 @@ const buttons = [
 const Counter = () => {
   return (
     <div>
-
+        {buttons.map(item => <Button innerText={item.textContent}/>)}
     </div>
   )
 }
