@@ -1,5 +1,5 @@
 import React from 'react'
-import MyComponent from './components/MyComponent.jsx'
+import Counter from './components/Counter'
 const App = () => {
 
   
@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <>
-      
+      <Counter />
     </>
   )
 }
