@@ -1,15 +1,17 @@
-import React from 'react'
-import Counter from './components/Counter'
-const App = () => {
+import react, { useState } from "react";
 
-  
+function App() {
 
+  let [name, setName] = useState('cdcd')
 
   return (
     <>
-      <Counter />
+      <input type="text" value={name}
+      onChange={(e) => setName(e.target.value)}/>
+
+      <p>{name}</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
