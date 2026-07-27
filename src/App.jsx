@@ -4,7 +4,7 @@ function App() {
 
   let [name, setName] = useState('Guest')
   let [quantity, setQuantity] = useState(1)
-  let []
+  let [comment, setComment] = useState('')
 
   function nameHandler(e) {
     setName(e.target.value)
@@ -12,20 +12,23 @@ function App() {
   function quantityHandler(e) {
     setQuantity(e.target.value)
   }
+  function commentHandler(e) {
+    setComment(e.target.value)
+  }
   return (
     <>
       <input onChange={nameHandler} className="border" type="text" name="" id="text" />
       <p>Name: {name}</p>
-      
+      <br />
       {/*  */}
 
       <input type="number" name="" id="number" className="border" onChange={quantityHandler}/>
       <p>quantity: {quantity}</p>
-
+<br />
       {/*  */}
-
-      <textarea onChange={} className="border" name="" placeholder="Enter delivery struction" id=""></textarea>
-
+<br />
+      <textarea onChange={commentHandler} className="border" name="" placeholder="Enter delivery struction" id=""></textarea>
+      <p>Comment: {comment}</p>
     </>
   );
 }
