@@ -55,7 +55,6 @@ function App() {
           name="delivery"
           id="delivery"
           value='delivery'
-          checked
           onChange={deliveryHandler}
         />
 
