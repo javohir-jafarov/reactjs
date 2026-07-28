@@ -6,6 +6,7 @@ function App() {
   let [quantity, setQuantity] = useState(1)
   let [comment, setComment] = useState('')
   let [payment, setPayment] = useState('Visa')
+  let [delivery, setDelivery] = useState()
 
   function nameHandler(e) {
     setName(e.target.value)
@@ -19,6 +20,9 @@ function App() {
   function paymentHandler(e) {
     setPayment(e.target.value)
   }
+  function deliveryHandler(e) {
+    setDelivery(e.target.value)
+  }
   return (
     <>
       <input onChange={nameHandler} className="border" type="text" name="" id="text" />
@@ -26,11 +30,11 @@ function App() {
       <br />
       {/*  */}
 
-      <input type="number" name="" id="number" className="border" onChange={quantityHandler}/>
+      <input type="number" name="" id="number" className="border" onChange={quantityHandler} />
       <p>quantity: {quantity}</p>
-<br />
+      <br />
       {/*  */}
-<br />
+      <br />
       <textarea onChange={commentHandler} className="border" name="" placeholder="Enter delivery struction" id=""></textarea>
       <p>Comment: {comment}</p>
 
@@ -42,6 +46,36 @@ function App() {
         <option value="paypal">PayPal</option>
       </select>
       <p>payment: {payment}</p>
+
+      {/*  */}
+
+      <div className="radio" >
+        <input
+          type="radio"
+          name="delivery"
+          id="delivery"
+          value='delivery'
+          checked
+          onChange={deliveryHandler}
+        />
+
+        <label htmlFor="delivery">delivey</label>
+
+                  <br />
+
+        <input 
+          type="radio"
+          name="delivery" 
+          id="pickup" 
+          value='pickup'
+          onChange={deliveryHandler}
+        />
+
+        <label htmlFor="pickup">pickup</label>
+
+      </div>
+      <p>Shipping: {delivery}</p>
+
     </>
   );
 }
