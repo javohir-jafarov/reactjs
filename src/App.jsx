@@ -83,16 +83,25 @@
 
 // export default App;
 
-import React from 'react'
+import React, { useState } from 'react'
 import ColorPicker from './components/ColorPicker'
 import Alert from './components/Alert'
 
+  
+
 const App = () => {
+  let [color, setColor ] = useState('#ffffff')
+
+let copyColor = () => {
+    navigator.clipboard.writeText(color)
+    alert('copied!')
+  }
+let [isCopied, setIsCopied] = useState(false)
   return (
     <>
 
-        <ColorPicker />
-        <Alert />
+        <ColorPicker copy={copyColor} color={color} setColor={setColor}/>
+        {isCopied && <Alert />}
     
     </>
   )
