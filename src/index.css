@@ -3,4 +3,10 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-image: url(./assets/colorfulBackround.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    max-height: fit-content;
 }

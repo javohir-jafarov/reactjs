@@ -91,12 +91,14 @@ import Alert from './components/Alert'
 
 const App = () => {
   let [color, setColor ] = useState('#ffffff')
+  let [isCopied, setIsCopied] = useState(false)
 
 let copyColor = () => {
     navigator.clipboard.writeText(color)
-    alert('copied!')
+    setIsCopied(true)
+    setTimeout(() => {setIsCopied(false)}, 1000)
   }
-let [isCopied, setIsCopied] = useState(false)
+
   return (
     <>
 
