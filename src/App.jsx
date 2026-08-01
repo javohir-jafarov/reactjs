@@ -85,9 +85,17 @@
 
 import React from 'react'
 import ColorPicker from './components/ColorPicker'
+import Alert from './components/Alert'
 
 const App = () => {
-  return <ColorPicker />
+  return (
+    <>
+
+        <ColorPicker />
+        <Alert />
+    
+    </>
+  )
 }
 
 export default App

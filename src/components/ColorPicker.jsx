@@ -10,10 +10,15 @@ const ColorPicker = () => {
     setColor(e.target.value)
   }
 
+  let copyColor = () => {
+    navigator.clipboard.writeText(color)
+    alert('copied!')
+  }
+
   return (
     <div className='flex flex-col items-center gap-4' >
       <h1 className='title text-3xl inline '>Color Picker</h1>
-      <div className="colorBox w-64 h-64 rounded-2xl p-4 flex items-center justify-center border" style={{backgroundColor: color}}>
+      <div className="colorBox w-64 h-64 rounded-2xl p-4 flex items-center justify-center border" onClick={copyColor} style={{backgroundColor: color}}>
 
         <p className=''>Selected color: <span>{color}</span></p>
 
