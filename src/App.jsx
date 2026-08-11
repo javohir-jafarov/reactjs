@@ -8,24 +8,33 @@ const App = () => {
 
   let handleYear = (event) => {
     setYear(event.target.value)
-    console.log(event.target.value)
   }
 
   let handleBrand = (event) => {
-    
+    setBrand(event.target.value)
   }
 
   let handleModel = (event) => {
-    
+    setModel(event.target.value)
   }
 
   let handleAddCar = () => {
-    
-  }
+    let newCar = {
+      year: year,
+      brand: brand,
+      model: model
+    }
+    setCars(c => ([...c, newCar]))
 
+  }
+console.log(cars)
   return (
     <div>
       <h1>lst of cars:</h1>
+
+      <ul>
+        {cars.map((car, index) => <li key={index}>{`${car.year} ${car.brand} ${car.model}`}</li>)}
+      </ul>
 
       <div action="">
         <input 
@@ -39,7 +48,7 @@ const App = () => {
         <br />
 
         <input 
-
+        onChange={(e) => {handleBrand(e)}}
         id='brand' 
         placeholder='brand'  
         className='border' 
@@ -48,7 +57,7 @@ const App = () => {
         <br />
 
         <input 
-
+        onChange={(e) => {handleModel(e)}}
         id='model' 
         placeholder='model' 
         className='border'  
@@ -57,7 +66,7 @@ const App = () => {
         <button className='border' onClick={handleAddCar}>Add</button>
       </div>
     </div>
-
+  
   )
 }
 
