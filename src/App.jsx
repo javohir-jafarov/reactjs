@@ -25,15 +25,21 @@ const App = () => {
       model: model
     }
     setCars(c => ([...c, newCar]))
+    setBrand('')
+    setYear('')
+    setModel('')
 
   }
-console.log(cars)
+
+  let handleRemover = (event) => {
+    setCars(c => c.filter((_, i) => i !== event))
+  }
   return (
     <div>
       <h1>lst of cars:</h1>
 
       <ul>
-        {cars.map((car, index) => <li key={index}>{`${car.year} ${car.brand} ${car.model}`}</li>)}
+        {cars.map((car, index) => <li onClick={() => {handleRemover(index)}} key={index}>{`${car.year} ${car.brand} ${car.model}`}</li>)}
       </ul>
 
       <div action="">
@@ -43,7 +49,7 @@ console.log(cars)
         id='year' 
         placeholder='year'  
         className='border' 
-        type="text" />
+        type="text" value={year}/>
 
         <br />
 
@@ -52,7 +58,7 @@ console.log(cars)
         id='brand' 
         placeholder='brand'  
         className='border' 
-        type="text" />
+        type="text" value={brand}/>
 
         <br />
 
@@ -61,7 +67,7 @@ console.log(cars)
         id='model' 
         placeholder='model' 
         className='border'  
-        type="text" />
+        type="text" value={model}/>
 
         <button className='border' onClick={handleAddCar}>Add</button>
       </div>
