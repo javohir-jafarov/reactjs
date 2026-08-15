@@ -16,9 +16,7 @@ const App = () => {
   let handleModel = (event) => {
     setModel(event.target.value)
   }
-  let handleRemover = () => {
-    
-  }
+  
 
   let handleAdd = () => {
     let newCar = {
@@ -26,18 +24,18 @@ const App = () => {
       brand: brand,
       model: model
     }
-    console.log(cars)
     setCars(c => ([...c, newCar]))
-    console.log(cars)
   }
 
-  console.log(year, brand, model)
+  let handleRemover = (e) => {
+    setCars(cars.filter((_, i) => (i !== e)))
+  }
   
   return (
     <div>
       List of cars:
       <ul>
-        {cars.map((car, index) => (<li key={index}>{car.year} {car.brand} {car.model} </li>))}
+        {cars.map((car, index) => (<li onClick={() => {handleRemover(index)}} key={index}>{car.year} {car.brand} {car.model} </li>))}
       </ul>
       <input type="number" id='year' placeholder='year' onChange={(e) => {handleYear(e)}}/>
       <input type="text" id='brand' placeholder='brand' onChange={(e) => {handleBrand(e)}}/>
