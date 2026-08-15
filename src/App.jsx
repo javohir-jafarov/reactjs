@@ -5,16 +5,7 @@ const App = () => {
   let [year, setYear] = useState('');
   let [brand, setBrand] = useState('');
   let [model, setModel] = useState('');
-  let handleAdd = () => {
-    let newCar = {
-      year: year,
-      brand: brand,
-      model: model
-    }
-    console.log(cars)
-    setCars(c => ([...c, newCar]))
-    console.log(cars)
-  }
+  
 
   let handleYear = (event) => {
     setYear(event.target.value)
@@ -27,6 +18,17 @@ const App = () => {
   }
   let handleRemover = () => {
     
+  }
+
+  let handleAdd = () => {
+    let newCar = {
+      year: year,
+      brand: brand,
+      model: model
+    }
+    console.log(cars)
+    setCars(c => ([...c, newCar]))
+    console.log(cars)
   }
 
   console.log(year, brand, model)
