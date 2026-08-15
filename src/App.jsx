@@ -37,7 +37,7 @@ const App = () => {
     <div>
       List of cars:
       <ul>
-        {cars.map((car, index) => (<li key={index}>{car}</li>))}
+        {cars.map((car, index) => (<li key={index}>{car.year} {car.brand} {car.model} </li>))}
       </ul>
       <input type="number" id='year' placeholder='year' onChange={(e) => {handleYear(e)}}/>
       <input type="text" id='brand' placeholder='brand' onChange={(e) => {handleBrand(e)}}/>
