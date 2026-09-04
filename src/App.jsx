@@ -1,15 +1,19 @@
 import React, {useState} from 'react'
 import Card from './components/Card'
 const App = () => {
-  let students = [
-    {id: 0,}
+  let studentsData = [
+    {id: 0, name: 'Javohir', age: 16},
+    {id: 0, name: 'Anvar', age: 12},
   ]
-  let [student, setStudent] = useState()
+  let [students, setStudents] = useState(studentsData)
   return (
     <div>
-      <Card />
+      <div className="studnets">
+        {students.map((item, index) => (<Card name={item.name} key={index} age={item.age}/>))}
+      </div>
     </div>
   )
+  
 }
 
 export default App
