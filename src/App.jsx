@@ -9,7 +9,7 @@ const App = () => {
 
   let addHandler = () => {
     let nameInp = document.getElementById('nameInp').value
-    document.getElementById('nameInp').value = ''
+    
 
     let ageInp = +document.getElementById('ageInp').value
 
