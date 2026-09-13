@@ -16,21 +16,23 @@ const App = () => {
     if (nameInp.trim() != '' && ageInp !== 0) {
       document.getElementById('nameInp').value = ''
       document.getElementById('ageInp').value = ''
-      let id = students.at(-1).id
-      console.log(id)
+
+      let lastStudent = students.at(-1)
       let obj = {
-        id: id + 1,
+        id: students.length === 0 ? 0 : lastStudent.id + 1,
         name: nameInp,
         age: ageInp
       }
       setStudents(s => [...s, obj])
-      console.log(students)
+      
     }
 
-    let handleDelete = () => {
-      students.filter()
-    }
+    console.log(students)
 
+
+  }
+  let handleDelete = (e) => {
+    setStudents(s => s.filter((_, i) => {return i !== e}))
   }
   return (
     <div>
@@ -40,7 +42,15 @@ const App = () => {
         <button onClick={() => addHandler()}>Add</button>
       </div>
       <div className="studnets">
-        {students.map((item, index) => (<Card name={item.name} key={index} age={item.age} delete={() => {handleDelete}}/>))}
+        {students.map((item, index) => (
+          <Card
+
+          name={item.name} 
+          key={index} 
+          age={item.age} 
+          delete={() => (handleDelete(index))}
+
+          />))}
       </div>
     </div>
   )
