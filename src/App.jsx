@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 
 const App = () => {
+  let arr = ['coconut', 'pineapple', 'apple', 'banan']
+  let [fruit, setFruit] = useState(arr)
+
+  
+
   return (
-    <div>App</div>
+    <div>
+      <ul>
+        {}
+      </ul>
+    </div>
   )
 }
 
