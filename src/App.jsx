@@ -10,8 +10,9 @@ const App = () => {
   return (
     <div>
       <ul>
-        {}
+        {arr.map((item, index) => <li key={index}>{item}</li>)}
       </ul>
+      <input type="text" />
     </div>
   )
 }
