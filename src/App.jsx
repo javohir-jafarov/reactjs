@@ -6,12 +6,14 @@ const App = () => {
 
     let handleAdd = () => {
         let input = document.getElementById('inp').value
+        if (input !== '') {
+            setTasks([...tasks, input])
+        }
         document.getElementById('inp').value = ''
-        setTasks([...tasks, input])
     }
 
-    lt handleDelete = () => {
-        
+    let handleDelete = (index) => {
+        setTasks(tasks.filter((_, i) => i !== index ))
     }
 
     return (
@@ -23,7 +25,7 @@ const App = () => {
             </div>
             <ul className='flex flex-col'>
                 {tasks.map((item, index) => <li className='border gap-2 items-center flex justify-between  w-fit h-8' key={index}><span>{item}</span> 
-                <button className='bg-red-600 cursor-pointer' onClick={}>delete</button>
+                <button className='bg-red-600 cursor-pointer' onClick={() => {handleDelete(index)}}>delete</button>
                 <button className='bg-blue-600 cursor-pointer'>👆</button>
                 <button className='bg-blue-600 cursor-pointer'>👇</button>
                 </li>)}
