@@ -7,11 +7,13 @@ const ToDoList = () => {
 
   let handleInpChange = (event) => {
     setNewTask(event.target.value)
-    console.log(newTask)
   }
 
-  let handleAdd = (event) => {
-    console.log(newTask)
+  let handleAdd = () => {
+    setTasks([...tasks, newTask])
+    setNewTask('')
+
+
   }
 
 
@@ -20,7 +22,7 @@ const ToDoList = () => {
       <h1 className='text-center'>ToDo List</h1>
       <div className="input flex gap-1 justify-center">
         <input type="text" value={newTask} onChange={() => { handleInpChange(event) }} id='inp' className='border' />
-        <button className='border px-5' onClick={() => { handleAdd(event) }}>add</button>
+        <button className='border px-5' onClick={() => { handleAdd() }}>add</button>
       </div>
       <ol className='flex flex-col gap-5 border'>
         {tasks.map((item, index) =>
