@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Li from './Li'
 
 const ToDoList = () => {
+  
+  let [tasks, setTasks] = useState(['clean room', 'play GTA VI', 'get some cookies'])
+  let [newTask, setNewTask] = useState('')
+
+
+
+
   return (
-    <div>ToDoList</div>
+    <div>
+        <h1>ToDo List</h1>
+        <ol>
+          {tasks.map((item, index) => <Li i={index} item={item}/>)}
+          
+        </ol>
+    </div>
   )
 }
 
